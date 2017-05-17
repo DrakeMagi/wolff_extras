@@ -2,6 +2,7 @@ wolff_extras
 =================
 Minetest mod 4.15
 
--- adds
-more chest
-lanterns
+-- Adds
+* dirt recipe
+* more style for chest (wood planks, logs)
+* lanterns 
