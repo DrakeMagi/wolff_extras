@@ -1,0 +1,6 @@
+-- chests --
+default
+
+-- lanterns --
+default
+stairs
