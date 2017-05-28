@@ -7,7 +7,7 @@ function register_lantern(name, dname, craft_item, tile_image)
   })
   --]]
 
-  local create_tiles = { tile_image, tile_image, tile_image .. "^lantern_overlay.png"}
+  local create_tiles = { tile_image, tile_image, tile_image .. "^lantern_overlay2.png"}
 
   minetest.register_craft({
     output = name,
@@ -25,7 +25,7 @@ function register_lantern(name, dname, craft_item, tile_image)
     sunlight_propagates = true,
     light_source = 13,
     groups = {oddly_breakable_by_hand = 2, cracky = 3},
-    connects_to = {"group:fence", "group:wood", "group:tree", "group:stone"},
+    connects_to = {"group:fence", "group:wall", "group:wood", "group:tree", "group:stone"},
 
     node_box = {
       type = 'connected',
