@@ -1,10 +1,11 @@
 wolff_extras = {}
 
-local modpath = minetest.get_modpath("wolff_extras")
+wolff_extras.modpath = minetest.get_modpath("wolff_extras")
 
-dofile(modpath .. "/util.lua")
-dofile(modpath .. "/chest.lua")
-dofile(modpath .. "/lanterns.lua")
+dofile(wolff_extras.modpath .. "/util.lua")
+dofile(wolff_extras.modpath .. "/chest.lua")
+dofile(wolff_extras.modpath .. "/lanterns.lua")
+dofile(wolff_extras.modpath .. "/walls.lua")
 
 -- infinite dirt
 minetest.register_craft({
