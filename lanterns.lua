@@ -19,13 +19,14 @@ function register_lantern(name, dname, craft_item, tile_image)
   })
 
   minetest.register_node( name, {
+    description = dname,
     paramtype = "light",
     tiles = create_tiles,
     drawtype = "nodebox",
     sunlight_propagates = true,
     light_source = 13,
     groups = {oddly_breakable_by_hand = 2, cracky = 3},
-    connects_to = {"group:fence", "group:wall", "group:wood", "group:tree", "group:stone"},
+    connects_to = {"group:wood", "group:tree", "group:stone"},
 
     node_box = {
       type = 'connected',

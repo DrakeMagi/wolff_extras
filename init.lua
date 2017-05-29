@@ -3,9 +3,10 @@ wolff_extras = {}
 wolff_extras.modpath = minetest.get_modpath("wolff_extras")
 
 dofile(wolff_extras.modpath .. "/util.lua")
+dofile(wolff_extras.modpath .. "/walls.lua")
 dofile(wolff_extras.modpath .. "/chest.lua")
 dofile(wolff_extras.modpath .. "/lanterns.lua")
-dofile(wolff_extras.modpath .. "/walls.lua")
+
 
 -- infinite dirt
 minetest.register_craft({
@@ -40,8 +41,9 @@ local slab_list = {
 }
 
 for _, block in ipairs(slab_list) do
-  local name = "wolff_extras:" .. string.sub(block[1], 13) .. "_lantern"
-  local dname = "Lantern"
+  local subname = string.sub(block[1], 13)
+  local name = "wolff_extras:" .. subname .. "_lantern"
+  local dname = capitalize(subname) .. " Lantern"
 
   register_lantern(name, dname, block[1], block[2])
 end

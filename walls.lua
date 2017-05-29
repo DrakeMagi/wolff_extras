@@ -5,18 +5,17 @@ function wolff_register_wall(wall_name, wall_desc, wall_texture, wall_mat, wall_
 		node_box = {
 			type = "connected",
 			fixed = {{-1/4, -1/2, -1/4, 1/4, 1/2, 1/4}},
-			-- connect_bottom =
 			connect_front = {{-3/16, -1/2, -1/2,  3/16, 3/8, -1/4}},
 			connect_left = {{-1/2, -1/2, -3/16, -1/4, 3/8,  3/16}},
 			connect_back = {{-3/16, -1/2,  1/4,  3/16, 3/8,  1/2}},
 			connect_right = {{ 1/4, -1/2, -3/16,  1/2, 3/8,  3/16}},
 		},
-		connects_to = { "group:wall", "group:stone" },
+		connects_to = { "group:wall", "group:stone", "group:post"},
 		paramtype = "light",
 		is_ground_content = false,
 		tiles = { wall_texture, },
 		walkable = true,
-		groups = { cracky = 3, wall = 1, stone = 2 },
+		groups = { cracky = 3, post = 1 },
 		sounds = wall_sounds,
 	})
 
@@ -32,7 +31,7 @@ function wolff_register_wall(wall_name, wall_desc, wall_texture, wall_mat, wall_
 		is_ground_content = false,
 		tiles = { wall_texture, },
 		walkable = true,
-		groups = { cracky = 3, wall = 1, stone = 2 },
+		groups = { cracky = 3, wall = 1 },
 		sounds = wall_sounds,
     legacy_facedir_simple = true,
 	})
@@ -80,7 +79,7 @@ local default_list = {
 for _, item in ipairs(default_list) do
   wolff_register_wall(
     'wolff_extras:' .. item[1],
-    item[1],
+    capitalize(item[1]),
     item[2],
     'default:' .. item[1],
      default.node_sound_stone_defaults()

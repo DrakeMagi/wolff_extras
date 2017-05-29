@@ -25,3 +25,7 @@ function table_clone(table_source) -- deep copy
     setmetatable(clone, meta)
     return clone
 end
+
+function capitalize(word)
+  return word:gsub("^%l", string.upper)
+end
